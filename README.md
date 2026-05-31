@@ -1,4 +1,4 @@
-# Schema-shot Maker Tools
+# Schema-Shot Maker Tools
 
 Tools for building and transforming prompts into schema-shot prompts.
 
