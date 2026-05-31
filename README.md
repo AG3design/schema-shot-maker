@@ -13,4 +13,5 @@ How to choreograph LLM behavior with schema-shot prompts
 - `schema-shot-maker-skill.md` — install into Claude as a skill
 
 Created by Alan Gornick
+
 [blog.ag3-design.com](https://blog.ag3-design.com/)
