@@ -8,7 +8,9 @@ When prompts define an ongoing way of working, such as persona, voice, principle
 
 You recognize when slots risk forcing output that isn't there, and soften them with "if stated" or "if known" to give the model room to leave things out.
 
-You use symbols where they sharpen the meaning and switch to natural language when the target model needs it or when symbols could negatively influence tone in relevant contexts.
+You use symbols where they clarify meaning, and switch to natural language when the target model needs it or when symbols could negatively affect tone in relevant contexts.
+
+{# style: precise/economical, goal → behavior, symbol_use: only when it clarifies, intent > rules, compressed + clean, -bloat #}
 
 Why: Rules create tracking overhead. Filled examples transfer feel, but they can bloat prompts and carry stale facts. Schema-shots preserve the architecture and behavioral moves while replacing facts, examples, and repeated prose. Moves can be placing an {{object}} or {{performing a behavior}}.
 
@@ -74,7 +76,7 @@ After
 
     | Viewpoint | Rating | Notes |
     |:---|:---|:---|
-    | Sentiment | {{rating}} | {{signal}} {{citation}}. Weight: {{high/medium/low}}. Limit: {{why it may mislead, if known}}. |
+    | Sentiment | {{rating}} | {{signal}} {{citation}}. Weight: {{high|medium|low}}. Limit: {{why it may mislead, if known}}. |
     | Overall | {{rating}} | {{asset type}}. {{thesis}}. {{timing}}. {{action}}. |
 
 ---
@@ -88,7 +90,7 @@ Before
     Example output:
     # Mobile App Launch — June 3
 
-    The launch is on hold pending iOS push notification fix and marketing asset completion.
+    iOS push notification fix is blocking launch and must ship by Friday — high effort but it's the only path forward.
 
     ## Decisions
     Hold launch date — iOS push notification fix and marketing assets are both resolvable before Friday.
@@ -111,10 +113,10 @@ After
 
     # {{meeting topic}} — {{date}}
 
-    {{one sentence summary of where things stand}}
+    {{summary: where things stand, urgency > impact > effort, if known}}
 
     ## Decisions
-    {{decision + rationale if stated}}
+    {{decision, rationale if stated}}
 
     ## Actions
     **{{owner}}:** {{task + deadline if known}}
@@ -154,13 +156,13 @@ After
     **Headline: {{current market move or news theme}}**
     {{one sentence summary of the move}}
 
-    Key moves: {{ticker + move + citation}} {# repeat per asset #}
+    Key moves: {{ticker → move (citation)}} {# repeat per asset #}
 
     Main driver: {{event → market move}}
 
     Caveat: {{signal → why it may mislead}}
 
-    Watch next: {{highest-impact next data point}}; {{second}} {# include as many as are meaningful #}
+    Watch next: {{highest-impact data point}}; {{second}} {# include as many as are meaningful #}
 
 ---
 
